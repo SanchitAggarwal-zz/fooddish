@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-
 body {
     font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:300;
@@ -7,71 +5,17 @@ body {
     color: #ddd;
 }
 
-body > .navbar .brand, body > .navbar .brand:hover {
-    color: #ccc;
+.foodItems {
+    background: #fff4a5;
+    border: 2px solid #d8be00;
+    border-left: none;
+    margin:5px;
+    color: #d8be00;
+    padding:2em 0;
+    font-size:80%;
+
 }
 
-body > .navbar li {
-    color: #999;
-    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
-    -webkit-transition: all .2s linear;
-    -moz-transition: all .2s linear;
-    transition: all .2s linear;
-}
-
-body > .navbar li:hover {
-    color: #ddd;
-    text-decoration: none;
-    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
-}
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: black;
-    padding: 0.2em 0;
-}
-
-#errorPlaceHolder {
-    width: 60%;
-    margin: 0 auto;
-}
-
-.relative {
-    position: relative;
-}
-
-.jqui-dnd-item-dragging {
-  border-color: green;
-  -webkit-box-shadow: 0 0 5px 3px #666;
-  -moz-box-shadow: 0 0 5px 3px #666;
-  box-shadow: 0 0 5px 3px #666;
-    z-index: 10000;
-}
-
-.controller {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 25px;
-    padding: 3px;
-}
-
-.popover {
-    z-index: 9001 !important;
-    color: #000;
-}
-
-.modal {
-    background: #444 url('../img/grid_tile.png');
-    color: #ddd;
-}
-
-.modal-header > .close {
-    color: #eee;
-}
-
-.modal-footer {
-    border: none;
-    background: #222 url('../img/grid_tile.png');
+#topFoodItems .foodItems:first-child {
+    border-left:2px solid #d8be00;
 }
