@@ -3,7 +3,7 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<html lang="en" ng-app>
+<html lang="en" ng-app="foodish">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -24,10 +24,9 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/vendor/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
-        <link rel="stylesheet" href="css/vendor/bootstrap.icon-large.min.css">
 
     </head>
-    <body>
+    <body ng-controller="mobApp">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please
                 <a href="http://browsehappy.com/">upgrade your browser</a> or
@@ -46,12 +45,12 @@
                     <ul class="thumbnails">
                         <li class="span1">
                             <a href="#">
-                                <i class="icon-chevron-left "></i>
+                                <i class="icon-chevron-left"></i>
                             </a>
                         </li>
-                        <li class="span2">
-                            <a href="#" class="thumbnail">
-                                <img data-src="holder.js/260x180" alt="260x180" style="width: 260px; height: 180px;">
+                        <li class="span2" ng-repeat="item in foodItemList" item-id="{{item.itemId}}">
+                            <a href="#" class="thumbnail" data-content="{{item.itemDesc}}" data-original-title="{{item.itemName}}">
+                                <img ng-src="{{item.img}}" alt="{{item.display_name}}" jqui-drag-start="dragCartFromBar(item, foodItemList)" style="z-index: 10000; width: 150px; height: 150px;" >
                             </a>
                         </li>
                         <li class="span2">
