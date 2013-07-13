@@ -28,11 +28,19 @@ function showHotelInfo(){
     $.ajax({ // ajax call starts
         type:"GET",
         url: hotelInfoURL+"name=IMAX", // Rest call for the top item list
-        //data:data , // Send value of the geo location of the user
         dataType: 'jsonp', // Choosing a JSON datatype
         success: function(data) // Variable data contains the data we get from serverside
         {
                alert(data.hotelId);
+               if (data["d"]) {
+                if (data["d"].length) {
+                    var items = data["d"],
+                        ul = $("<ul />").appendTo($("#Li2"));
+                    for (x in items) {
+                        var li = $("<li />").appendTo(ul);
+                        li.append($("<a />", { href: items[x].ReportUrl, text: items[x].ReportName }));
+                    }
+                }
         },
         error:function(data)
         {

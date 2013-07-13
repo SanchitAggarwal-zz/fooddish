@@ -34,8 +34,9 @@
                 to improve your experience.
             </p>
         <![endif]-->
-        <div id="topFoodItems">
-            <div class="pure-g-r">
+        <div id="map"></div>
+        <div id="topFoodItems" class="pure-g-r">
+            <div >
                 <ul>
                     <li ng-repeat="item in foodItems" item-id="{{$index}}">
                         <a href="#"  class="cartridgePopover" rel="popover" data-content="{{c.description}}" data-original-title="{{c.display_name}}">
@@ -55,62 +56,29 @@
                 <div class="pure-u-1-5"><div class="demo-unit">.pure-u-1-5</div></div>
             </div>
         </div>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="brand" href="#">Fooddish</a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav">
-                            <li class="run"><a href="#runModal" role="button" data-toggle="modal"><i class="icon-play icon-white"></i> Run</a></li>
-                            <li class="stop"><a href="#stop"><i class="icon-stop icon-white"></i> Stop</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
+        <div id="hotelList" class="pure-g-r">
+            <div >
+                <ul>
+                    <li ng-repeat="item in foodItems" item-id="{{$index}}">
+                        <a href="#"  class="cartridgePopover" rel="popover" data-content="{{c.description}}" data-original-title="{{c.display_name}}">
+                            <img ng-src="{{c.img}}" alt="{{c.display_name}}" jqui-drag-start="dragCartFromBar(c, cartridges)" style="z-index: 10000">
+                        </a>
+                    </li>
+                    <li ng-repeat="t in templates" template-id="{{$index}}">
+                        <a href="#"  class="templatePopover" rel="popover" data-content="{{t.metadata.description}}" data-original-title="{{t.display_name}}">
+                            <img ng-src="{{t.img}}" alt="{{t.display_name}}" jqui-drag-start="dragCartFromBar(t, templates)" style="z-index: 10000">
+                        </a>
+                    </li>
+                </ul>
+                <div class="pure-u-1-5"><div class="foodItems">.pure-u-1-5</div></div>
+                <div class="pure-u-1-5"><div class="demo-unit">.pure-u-1-5</div></div>
+                <div class="pure-u-1-5"><div class="demo-unit">.pure-u-1-5</div></div>
+                <div class="pure-u-1-5"><div class="demo-unit">.pure-u-1-5</div></div>
+                <div class="pure-u-1-5"><div class="demo-unit">.pure-u-1-5</div></div>
             </div>
         </div>
+        <div id="hotelInfo">
 
-        <div class="container">
-
-            <!--<h1>Bootstrap starter template</h1>
-            <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
-            -->
-        </div> <!-- /container -->
-
-        <div id="runModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="runModal" aria-hidden="true">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h3 id="runModal">Hotel Name</h3>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal"  ui-keypress="{enter : 'run()'}">
-                    <div class="control-group">
-                        <label class="control-label" for="inputExperimentName"><i class=" icon-pencil icon-white"></i></label>
-                        <div class="controls">
-                            <input type="text" id="inputExperimentName" placeholder="Experiment Name" ng-model="name">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="inputWorkflowInterpreterURL"><i class=" icon-upload icon-white"></i></label>
-                        <div class="controls">
-                            <input type="url" id="inputWorkflowInterpreterURL" placeholder="Workflow Interpreter URL" ng-model="interpreterURL">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="inputGFacURL"><i class=" icon-upload icon-white"></i></label>
-                        <div class="controls">
-                            <input type="url" id="inputGFacURL" placeholder="GFac URL" ng-model="GFacURL">
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn">Run</button><button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-            </div>
         </div>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script>window.angular || document.write('<script src="js/vendor/angular.min.js"><\/script>')</script>
