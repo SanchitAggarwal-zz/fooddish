@@ -32,15 +32,10 @@ function showHotelInfo(){
         success: function(data) // Variable data contains the data we get from serverside
         {
                alert(data.hotelId);
-               if (data["d"]) {
-                if (data["d"].length) {
-                    var items = data["d"],
-                        ul = $("<ul />").appendTo($("#Li2"));
-                    for (x in items) {
-                        var li = $("<li />").appendTo(ul);
-                        li.append($("<a />", { href: items[x].ReportUrl, text: items[x].ReportName }));
-                    }
-                }
+               if (data["result"].length>0) {
+                   var info = data["result"];
+                   var text="<div class='hotelMain' id="+info["hotelId"]+"></div>";
+               }
         },
         error:function(data)
         {
@@ -48,6 +43,11 @@ function showHotelInfo(){
         }
     });
 }
+
+function hotelHead(info)
+{
+}
+
 //Main function on load
 $(document).ready(function(){
     //showTopItemList();
