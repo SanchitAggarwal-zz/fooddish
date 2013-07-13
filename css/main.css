@@ -1,15 +1,8 @@
-body {
-    font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight:300;
-    background: #444 url(../img/bg_tile.png);
-    color: #ddd;
-}
-
 .foodItems {
     background: #fff4a5;
     border: 2px solid #d8be00;
     border-left: none;
-    margin:5px;
+    margin:10px;
     color: #d8be00;
     padding:2em 0;
     font-size:80%;
