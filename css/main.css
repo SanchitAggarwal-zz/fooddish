@@ -1,3 +1,6 @@
+body{
+    background:url("img/bg.png") repeat no-scroll;
+}
 .foodItems {
     background: #fff4a5;
     border: 2px solid #d8be00;
@@ -11,4 +14,8 @@
 
 #topFoodItems .foodItems:first-child {
     border-left:2px solid #d8be00;
+}
+
+#map img{
+    max-width: none;
 }
