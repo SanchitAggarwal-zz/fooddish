@@ -42,11 +42,11 @@
             </div>
             <div id="map"></div>
 
-            <div id="topFoodItems"  class="row-fluid carousel slide">
-                <div id="c" class="carousel-inner">
+            <div id="topFoodCarousel"  class="row-fluid carousel slide">
+                <div id="c" class="carousel-inner" style="position:relative;">
                     <div class="item active">
                             <ul class="thumbnails">
-                                <li class="span2" ng-repeat="i in range(0,5)" item-id="{{foodItemList[i].itemId}}">
+                                <li class="span2" ng-repeat="i in  [0,1,2,3,4,5]" item-id="{{foodItemList[i].itemId}}">
                                     <a href="#" class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}" onclick="getHotelByItem('{{foodItemList[i].itemId}}')">
                                         <img ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
                                     </a>
@@ -55,7 +55,7 @@
                         </div>
                     <div class="item">
                         <ul class="thumbnails">
-                            <li class="span2" ng-repeat="i in range(5,10)" item-id="{{foodItemList[i].itemId}}">
+                            <li class="span2" ng-repeat="i in [6,7,8,9]" item-id="{{foodItemList[i].itemId}}">
                                 <a href="#" class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}">
                                     <img ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
                                 </a>
@@ -67,10 +67,10 @@
                 <a class="right carousel-control" href="#topFoodCarousel" data-slide="next">&rsaquo;</a>
             </div>
             <div id="hotelList">
-                <div class="accordion" ng-repeat="hotel in hotelList" id="{{hotel.hotelId}}">
-                    <div class="accordion-group">
+                <div class="accordion" id="hotelListAccordian">
+                    <div class="accordion-group" ng-repeat="hotel in hotelList">
                         <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#{{hotel.hotelId}}" href="#{{hotel.hotelName}}">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="hotelListAccordian" href="#{{hotel.hotelId}}"">
                                 <i class="icon-chevron-down"></i>
                             </a>
                             <div class="media">
@@ -81,13 +81,13 @@
                                             </a>
                                             <div class="media-body">
                                                 <h4 class="media-heading">{{hotel.hotelName}}</h4>
-                                                <p><i ng-repeat="i in [] | range:{{hotel.ratings}}" class="icon-star"></i></p>
+                                                <p><i ng-repeat="i in [0,1,2]" id="{{i}}" class="icon-star"></i></p>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                         </div>
-                        <div id="#{{hotel.hotelName}}" class="accordion-body collapse" style="height: 0px;">
+                        <div id="{{hotel.hotelId}}" class="accordion-body collapse" style="height: 0px;">
                             <div class="accordion-inner">
                                 <div id="hotelInfo" class="row-fluid">
                                     <ul class="thumbnails">
