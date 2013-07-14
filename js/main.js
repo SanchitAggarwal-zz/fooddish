@@ -48,6 +48,12 @@ function showHotelInfo(){
 
 //Main function on load
 $(document).ready(function(){
-//    showTopItemList();
-//    showHotelInfo();
+    $('#topFoodCarousel').carousel();
+    //    showTopItemList();
+    //    showHotelInfo();
 });
+
+//To get the hotelList by Item Id
+function getHotelByItem(itemId){
+
+}

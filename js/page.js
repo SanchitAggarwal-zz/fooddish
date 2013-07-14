@@ -38,7 +38,4 @@ var fooddishController = function ($scope, $http) {
             $scope.data = data || "Request failed";
             $scope.status = status;
         });
-
-
-
 };
