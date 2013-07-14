@@ -47,7 +47,7 @@
                     <div class="item active">
                             <ul class="thumbnails">
                                 <li class="span2" ng-repeat="i in  [0,1,2,3,4,5]" item-id="{{foodItemList[i].itemId}}">
-                                    <a ng-href="" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')">
+                                    <a ng-href="" ng-click="getHotelByItem({{foodItemList[i].itemId}})">
                                         <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}"  ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;"
                                     </a>
                                 </li>
@@ -56,7 +56,7 @@
                     <div class="item">
                         <ul class="thumbnails">
                             <li class="span2" ng-repeat="i in [6,7,8,9]" item-id="{{foodItemList[i].itemId}}">
-                                <a ng-href="" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')">
+                                <a ng-href="" ng-click="getHotelByItem({{foodItemList[i].itemId}})">
                                     <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}"  ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;"
                                 </a>
                             </li>
@@ -97,6 +97,10 @@
                                                 <div class="caption">
                                                     <h3>Menu List</h3>
                                                     <p class="span2" ng-repeat="i in  hotel.menuItems" item-id="{{i.itemId}}"></p>
+                                                </div>
+                                                <div >
+                                                    <h4>Address</h4>
+                                                    <p class="span2" >{{hotel.location["address"]}}"></p>
                                                 </div>
                                             </div>
                                         </li>
