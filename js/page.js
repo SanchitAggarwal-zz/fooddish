@@ -76,6 +76,8 @@ var fooddishController = function ($scope, $http) {
                 $scope.data = data || "Request failed";
                 $scope.status = status;
             });
+        hotelList  = $scope.hotelList;
+        itemList=$scope.foodItemList;
     }
 
 };
@@ -211,6 +213,30 @@ function displayMarker(){
         infowindow.open(map,marker);
     });
 }
+
+
+function setHotelMarker(){
+    for(hotel in hotelList){
+        var a=hotelList[hotel]["location"] ["lat"];
+        var b=hotelList[hotel]["location"] ["lng"];
+        var hotelLatLng = new google.maps.LatLng(a,b);
+        var locmarker = new google.maps.Marker({
+            position: hotelLatLng,
+            map: map,
+            //title: 'My Position'
+        });
+        locmarker.setAnimation(google.maps.Animation.BOUNCE);
+        var contentString = hotelList[hotel]["hotelName"];
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 200
+        });
+        google.maps.event.addListener(locmarkermarker, 'click', function() {
+            infowindow.open(map,locmarkermarker);
+        });
+    }
+}
+
 
 function getBound(){
     bounds = map.getBounds();
