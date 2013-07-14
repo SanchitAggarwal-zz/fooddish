@@ -35,7 +35,7 @@
         <div class="container">
             <div id="navigationBar" class="navbar">
                 <div class="navbar-inner">
-                    <a class="brand" href="#">Fooddish</a>
+                    <a class="brand" href="#"><img src="img/logo.png" width="100px"/> dish</a>
                 </div>
             </div>
             <div id="map" style="height: 200px">
@@ -47,18 +47,14 @@
                     <div class="item active">
                             <ul class="thumbnails">
                                 <li class="span2" ng-repeat="i in  [0,1,2,3,4,5]" item-id="{{foodItemList[i].itemId}}">
-                                    <a href="#" class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}" onclick="getHotelByItem('{{foodItemList[i].itemId}}')">
-                                        <img ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
-                                    </a>
+                                    <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')" ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
                                 </li>
                             </ul>
                         </div>
                     <div class="item">
                         <ul class="thumbnails">
                             <li class="span2" ng-repeat="i in [6,7,8,9]" item-id="{{foodItemList[i].itemId}}">
-                                <a href="#" class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}">
-                                    <img ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
-                                </a>
+                                <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')" ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
                             </li>
                         </ul>
                     </div>
@@ -93,11 +89,10 @@
                                     <ul class="thumbnails">
                                         <li>
                                             <div class="thumbnail">
-                                                <!--<img data-src="holder.js/300x200" alt="300x200" style="width: 300px; height: 200px;">-->
+                                                <img data-src="{{hotel.hotelUrl}}" alt="300x200" style="width: 300px; height: 200px;">
                                                 <div class="caption">
-                                                    <h3>Thumbnail label</h3>
-                                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                                    <!--<p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>-->
+                                                    <h3>Menu List</h3>
+                                                    <p class="span2" ng-repeat="i in  hotel.menuItems" item-id="{{i.itemId}}">{{hotel.itemName[]}} </p>
                                                 </div>
                                             </div>
                                         </li>

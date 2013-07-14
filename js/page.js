@@ -52,7 +52,6 @@ var fooddishController = function ($scope, $http) {
     }).success(function (hotelData) {
             console.log(hotelData)
             $scope.hotelList = hotelData["result"];
-            $scope.ratingList = range;
         }).
         error(function(data, status) {
             //alert(data)
@@ -61,6 +60,24 @@ var fooddishController = function ($scope, $http) {
         });
     hotelList  = $scope.hotelList;
     itemList=$scope.foodItemList;
+
+    //To get the hotelList by Item Id
+    $scope.getHotelByItem=function (itemId) {
+        $scope.hotelInfoURL=hotelInfoURL+"?"+"itemID="+itemId;
+        $http({ // Load the initial data
+            url: $scope.hotelInfoURL,
+            method: 'GET'
+        }).success(function (hotelData) {
+                console.log(hotelData)
+                $scope.hotelList = hotelData["result"];
+            }).
+            error(function(data, status) {
+                //alert(data)
+                $scope.data = data || "Request failed";
+                $scope.status = status;
+            });
+    }
+
 };
 
 
@@ -92,13 +109,6 @@ $(document).ready(function(){
         $(element).append(stars);
     }
 });
-
-//To get the hotelList by Item Id
-function getHotelByItem(itemId){
-    hotelInfoURL=hotelInfoURL+"?"+"itemID="+itemId;
-    fooddishController($scope, $http);
-
-    }
 
 /*function read()
 {
