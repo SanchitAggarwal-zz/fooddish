@@ -48,6 +48,6 @@ function showHotelInfo(){
 
 //Main function on load
 $(document).ready(function(){
-    showTopItemList();
-    showHotelInfo();
+//    showTopItemList();
+//    showHotelInfo();
 });

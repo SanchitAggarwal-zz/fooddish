@@ -81,21 +81,21 @@
                     </ul>
             </div>
             <div id="hotelList">
-                <div class="accordion" id="accordion2">
+                <div class="accordion" ng-repeat="hotel in hotelList" id="{{hotel.hotelId}}">
                     <div class="accordion-group">
                         <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                Collapsible Group Item #1
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#{{hotel.hotelId}}" href="#collapseOne">
+                                <i class="icon-chevron-down"></i>
                             </a>
                             <div class="media">
                                     <ul class="media-list">
                                         <li class="media">
-                                            <a class="pull-left" href="#">
-                                                <img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;">
+                                            <a href="#" class="pull-left" data-original-title="{{hotel.hotelName}}">
+                                                <img class="media-object" ng-src="{{hotelUrl}}" alt="{{hotel.hotelName}}"  style="z-index: 10000; width: 75px; height: 75px;" >
                                             </a>
                                             <div class="media-body">
-                                                <h4 class="media-heading">Media heading</h4>
-                                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                                <h4 class="media-heading">{{hotel.hotelName}}</h4>
+                                                <p><i ng-repeat="" class="icon-star"></i></p>
                                             </div>
                                         </li>
                                     </ul>
