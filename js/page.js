@@ -96,7 +96,7 @@ $(document).ready(function(){
 
     catch(error2)
     {
-        alert(error2);
+        //alert(error2);
     }
 
 
@@ -121,7 +121,7 @@ $(document).ready(function(){
 
     catch(error1)
     {
-        alert(error1);
+        //alert(error1);
     }
 } */
 
@@ -151,13 +151,13 @@ function myPositionSuccess(position)
 
     catch(error3)
     {
-        alert(error3);
+        //alert(error3);
     }
 }
 
 function myPositionError(error)
 {
-    alert('code: '    + error.code    + '\n' +    'message: ' + error.message + '\n');
+    //alert('code: '    + error.code    + '\n' +    'message: ' + error.message + '\n');
 }
 
 //each time the position changes
@@ -180,7 +180,7 @@ function myWatchSuccess(position)
 
     catch(error4)
     {
-        alert(error4);
+       // alert(error4);
     }
 
 }

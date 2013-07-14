@@ -47,14 +47,18 @@
                     <div class="item active">
                             <ul class="thumbnails">
                                 <li class="span2" ng-repeat="i in  [0,1,2,3,4,5]" item-id="{{foodItemList[i].itemId}}">
-                                    <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')" ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
+                                    <a ng-href="" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')">
+                                        <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}"  ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;"
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     <div class="item">
                         <ul class="thumbnails">
                             <li class="span2" ng-repeat="i in [6,7,8,9]" item-id="{{foodItemList[i].itemId}}">
-                                <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')" ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;" >
+                                <a ng-href="" ng-click="getHotelByItem('{{foodItemList[i].itemId}}')">
+                                    <img class="thumbnail" data-content="{{foodItemList[i].itemDesc}}" data-original-title="{{item.itemName}}"  ng-src="{{foodItemList[i].itemurl}}" alt="{{foodItemList[i].itemName}}"  style="z-index: 10000; width: 150px; height: 150px;"
+                                </a>
                             </li>
                         </ul>
                     </div>
