@@ -5,7 +5,7 @@ var fooddish = angular.module('fooddish', []);
 var fooddishController = function ($scope, $http) {
     // Page related objects
     $scope.error = true;
-    $scope.topItemListURL= "http://10.10.1.193:8080/Food/service/topItems?";
+    $scope.topItemListURL= "http://10.10.1.193:8080/Food/service/topItems";
 
     // Variables related to the top food item list
     $scope.foodItemList = [];
